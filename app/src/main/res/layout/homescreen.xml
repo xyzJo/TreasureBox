@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutHolder"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:background="#DEDEDE"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:id="@+id/topSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="Welcome to your..."
+                android:textColor="#000000"
+                android:textSize="10pt" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:paddingTop="20dp"
+                app:srcCompat="@mipmap/tblogo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/middleSection"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#DEDEDE"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <EditText
+                android:id="@+id/editText6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:paddingBottom="20dp"
+                android:text="Begin by:
+                    \n entering your unique PIN
+                    \n or signing up as a new user!" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:paddingTop="40dp"
+            tools:layout_editor_absoluteY="186dp">
+
+            <ImageButton
+                android:id="@+id/existingUser"
+                android:layout_width="147dp"
+                android:layout_height="85dp"
+                android:layout_weight="2"
+                android:background="#DEDEDE"
+                app:srcCompat="@mipmap/button1" />
+
+            <ImageButton
+                android:id="@+id/newUser"
+                android:layout_width="163dp"
+                android:layout_height="87dp"
+                android:layout_weight="2"
+                android:paddingLeft="15dp"
+                android:background="#DEDEDE"
+                app:srcCompat="@mipmap/button2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
