@@ -52,18 +52,16 @@
             android:orientation="vertical"
             android:paddingTop="30dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/editText6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="20"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textMultiLine"
-                android:paddingBottom="20dp"
-                android:text="Begin by:
-                    \n entering your unique PIN
-                    \n or signing up as a new user!" />
+                android:paddingBottom="10dp"
+                android:textColor="#000000"
+                android:text="\n Begin by:\n entering your unique PIN \n or signing up as a new user!" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,6 +71,7 @@
             android:layout_weight="20"
             android:orientation="horizontal"
             android:paddingTop="40dp"
+            android:background="#DEDEDE"
             tools:layout_editor_absoluteY="186dp">
 
             <ImageButton
