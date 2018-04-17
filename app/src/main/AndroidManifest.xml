@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".homescreen">
+            <intent-filter>
+                <action android:name="android.intent.action.NEXT" />
+
+                <category android:name="android.intent.category.NEXT_LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
