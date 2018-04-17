@@ -76,7 +76,7 @@
             tools:layout_editor_absoluteY="186dp">
 
             <ImageButton
-                android:id="@+id/existingUser"
+                android:id="@+id/imageButton_existingUser"
                 android:layout_width="147dp"
                 android:layout_height="85dp"
                 android:layout_weight="2"
@@ -84,7 +84,7 @@
                 app:srcCompat="@mipmap/button1" />
 
             <ImageButton
-                android:id="@+id/newUser"
+                android:id="@+id/imageButton_newUser"
                 android:layout_width="163dp"
                 android:layout_height="87dp"
                 android:layout_weight="2"
