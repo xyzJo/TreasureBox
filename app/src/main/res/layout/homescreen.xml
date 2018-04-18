@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/layoutHolder"
-        android:layout_width="match_parent"
-        android:layout_height="508dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:background="#DEDEDE"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
@@ -69,9 +69,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:background="#DEDEDE"
             android:orientation="horizontal"
             android:paddingTop="40dp"
-            android:background="#DEDEDE"
             tools:layout_editor_absoluteY="186dp">
 
             <ImageButton
@@ -87,8 +87,8 @@
                 android:layout_width="163dp"
                 android:layout_height="87dp"
                 android:layout_weight="2"
-                android:paddingLeft="15dp"
                 android:background="#DEDEDE"
+                android:paddingLeft="15dp"
                 app:srcCompat="@mipmap/button2" />
         </LinearLayout>
     </LinearLayout>
