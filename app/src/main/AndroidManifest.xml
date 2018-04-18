@@ -13,18 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".homescreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homescreen">
+        <activity android:name=".FoldersView">
             <intent-filter>
-                <action android:name="android.intent.action.NEXT" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.NEXT_LAUNCHER" />
+                <category android:name="android.intent.category.APP_GALLERY" />
             </intent-filter>
         </activity>
     </application>
