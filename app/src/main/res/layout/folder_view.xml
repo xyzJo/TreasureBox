@@ -69,12 +69,6 @@
                 android:background="#FFFFFF"
                 app:srcCompat="@mipmap/folder2" />
 
-            <Button
-                android:id="@+id/request_permission"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Request Permission" />
         </LinearLayout>
 
     </LinearLayout>
