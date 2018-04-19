@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -14,11 +16,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class FoldersView extends AppCompatActivity {
     public static final int IMAGE_GALLERY_REQUEST = 20;
+    private ImageView imgPicture;
 
     //TODO: Commit REMOVE TODOS completed
     //TODO: Make this new button 'functionality' correspond to funny pictures ImageButton
@@ -38,14 +44,15 @@ public class FoldersView extends AppCompatActivity {
             public void onClick(View v) {
                 if(ContextCompat.checkSelfPermission(FoldersView.this,
                         Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    //TODO: remove this toast and just openGallery()
-                    Toast.makeText(FoldersView.this, "You have already granted this permission", Toast.LENGTH_SHORT).show();
                     openGallery(v);
                 } else {
                     requestStoragePermission();
                 }
             }
         });
+
+        //get reference to the ImageView that holds image that the user will see
+        imgPicture = findViewById(R.id.imgPicture);
     }
 
     private void requestStoragePermission() {
@@ -78,10 +85,7 @@ public class FoldersView extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if(requestCode == STORAGE_PERMISSION_CODE) {
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //TODO: MAYBE get rid of this toast?
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                //view not recognized? Have to click again to enter?
-                //openGallery();
+                Toast.makeText(this, "Permission Granted, Click the folder 1 more time to enter your Gallery", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
@@ -104,5 +108,42 @@ public class FoldersView extends AppCompatActivity {
         filePicker.setDataAndType(data, "image/*");
 
         startActivityForResult(filePicker, IMAGE_GALLERY_REQUEST);
+    }
+
+
+    /*
+    * requestCode = constant IMAGE_GALLERY_REQUEST, a way to determine which activity we're hearing back from
+    * resultCode is going to tell us if the activity that we called executed OK or if the user exited out of it
+    * Intent data is going to tell be any data that that result returns
+    * */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK) {       //everything processed successfully
+
+            if(requestCode == IMAGE_GALLERY_REQUEST) {      //hearing back from image gallery
+                //URI means Universal Image Indicator
+                Uri imageUri = data.getData();
+                //declare a stream to read the image data from SD card
+                InputStream inputStream;
+
+                //any time your streaming for data there is a chance it might fail, thus try catch block is needed
+                try {
+                    //we got an input stream
+                    inputStream = getContentResolver().openInputStream(imageUri);
+                    
+                    //get a bitmap from the stream
+                    Bitmap image = BitmapFactory.decodeStream(inputStream);
+
+                    //show the image to the user
+                    imgPicture.setImageBitmap(image);
+
+
+                }  catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    //show message to user that img is unavailable
+                    Toast.makeText(this, "Unable to open image", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 }
