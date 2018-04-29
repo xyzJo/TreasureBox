@@ -68,6 +68,16 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 app:srcCompat="@mipmap/folder2" />
+            <!--TODO: Remove this imagePicture and instead, figure  out how to place them within an actual folder
+                    Note: will require another layout
+                    idea: can layouts be reused? ie. clicking into any of the content folders will have the same layout?-->
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="180dp"
+                android:layout_height="144dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"/>
+
 
         </LinearLayout>
 
