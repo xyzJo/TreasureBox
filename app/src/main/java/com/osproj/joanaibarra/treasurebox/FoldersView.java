@@ -25,12 +25,6 @@ import java.io.InputStream;
 public class FoldersView extends AppCompatActivity {
     public static final int IMAGE_GALLERY_REQUEST = 20;
     private ImageView imgPicture;
-
-    //TODO: Commit REMOVE TODOS completed
-    //TODO: Make this new button 'functionality' correspond to funny pictures ImageButton
-    //TODO: Delete test RequestPermissions Button
-    //TODO: use last two stackOv tabs to create openPhotos() func upon permissions_granted - openPhotos() will do so with Intents(?)
-
     private static int STORAGE_PERMISSION_CODE = 1;
 
     @Override
